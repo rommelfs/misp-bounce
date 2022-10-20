@@ -2,10 +2,9 @@ MISP Email Bounce handling
 
 Let your postfix send your MISP bounce messages into a mailbox (example: misp-bounce) in the Maildir format:
 
-```
-/^Subject: (Undeliverable|Δεν παραδόθηκε|Unzustellbar|Ekki hægt að afhenda|Non remis\ ):\ \[(MISP1|MISP2)\].*/  REDIRECT misp-bounce@yourserver.tld
 
-```
+ /^Subject: (Undeliverable|Δεν παραδόθηκε|Unzustellbar|Ekki hægt að afhenda|Non remis\ ):\ \[(MISP1|MISP2)\].*/  REDIRECT misp-bounce@yourserver.tld
+
 
 Add a cronjob and point to the place you installed this repo to:
-`*/5 * * * *     cd /your/path/to/misp-bounce ; ./bouncer.sh`
+ */5 * * * *     cd /your/path/to/misp-bounce ; ./bouncer.sh
